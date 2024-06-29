@@ -1,0 +1,39 @@
+# バイナリ、キャッシュ、ログファイルを無視する
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+hs_err_pid*
+
+# 一時ファイルを無視する
+*.log
+*.tmp
+*.swp
+
+# ビルドや依存関係によって生成されるファイルやディレクトリを無視する
+target/
+bin/
+node_modules/
+dist/
+
+# IDEやエディタによって生成されるファイルを無視する
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.classpath
+*.project
+
+# OSによって生成されるファイルを無視する
+.DS_Store
+Thumbs.db
+
+# 認証情報や秘密情報を含むファイルを無視する（セキュリティ上の理由）
+*.key
+*.pem
+*.env
