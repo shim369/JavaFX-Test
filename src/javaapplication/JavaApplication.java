@@ -4,17 +4,36 @@
  */
 package javaapplication;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
 /**
  *
  * @author shim
  */
-public class JavaApplication {
+public class JavaApplication extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) {
+        Label label = new Label("Hello, JavaFX!");
+        StackPane root = new StackPane();
+        root.getChildren().add(label);
+
+        Scene scene = new Scene(root, 300, 200);
+
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        launch(args);
     }
     
 }
