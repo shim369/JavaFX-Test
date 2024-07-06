@@ -1253,7 +1253,7 @@ is divided into following sections:
     <target name="-post-jar">
         <!-- Empty placeholder for easier customization. -->
         <!-- You can override this target in the ../build.xml file. -->
-        <java classname="javaapplication.JavaApplication" fork="true">
+        <java classname="main.com.example.app.JavaApplication" fork="true">
             <jvmarg value="--module-path" />
             <jvmarg value="/Users/shim/javafx-sdk-22.0.1/lib" />
             <jvmarg value="--add-modules" />

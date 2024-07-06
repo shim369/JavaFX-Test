@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" fx:controller="main.com.example.app.controller.HelloController" stylesheets="/main/com/example/app/utils/css/style.css">
+    <children>
+        <Label fx:id="helloLabel" text="Hello World!" />
+    </children>
+</AnchorPane>
