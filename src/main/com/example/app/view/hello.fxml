@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" fx:controller="main.com.example.app.controller.HelloController" stylesheets="/main/com/example/app/utils/css/style.css">
-    <children>
-        <Label fx:id="helloLabel" text="Hello World!" />
-    </children>
-</AnchorPane>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" fx:controller="main.com.example.app.controller.HelloController" stylesheets="/main/com/example/app/utils/css/style.css">
+    <top>
+        <HBox styleClass="header">
+            <children>
+                <Label text="JavaFX Test App" styleClass="header-label" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox>
+            <children>
+                <Label fx:id="helloLabel" styleClass="text-color" />
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox>
+            <children>
+                <Button text="Footer Action 1" />
+                <Button text="Footer Action 2" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
