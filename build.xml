@@ -7,7 +7,7 @@
     </target>
 
     <target name="compile" depends="init">
-        <javac includeantruntime="false" srcdir="src/main/com/example/app" destdir="build/classes">
+        <javac includeantruntime="false" srcdir="src/main/java" destdir="build/classes">
             <classpath>
                 <fileset dir="${javafx.dir}">
                     <include name="*.jar"/>
@@ -16,28 +16,25 @@
         </javac>
     </target>
 
-    <target name="jar" depends="compile">
-        <mkdir dir="dist"/>
-        <copy todir="build/classes/main/com/example/app/utils/css">
-            <fileset dir="src/main/com/example/app/utils/css"/>
+    <target name="copy-resources" depends="compile">
+        <copy todir="build/classes">
+            <fileset dir="src/main/resources"/>
         </copy>
+    </target>
+
+    <target name="jar" depends="copy-resources">
+        <mkdir dir="dist"/>
         <jar destfile="dist/JavaApplication.jar" basedir="build/classes">
             <manifest>
-                <attribute name="Main-Class" value="main.com.example.app.JavaApplication"/>
+                <attribute name="Main-Class" value="main.java.app.JavaApplication"/>
                 <attribute name="Class-Path" value="${javafx.dir}/javafx.controls.jar ${javafx.dir}/javafx.fxml.jar"/>
             </manifest>
-            <fileset dir="src">
-                <include name="**/*.fxml"/>
-            </fileset>
-            <fileset dir="build/classes">
-                <include name="**/*.css"/>
-            </fileset>
         </jar>
     </target>
 
     <target name="debug" depends="jar">
         <java jar="dist/JavaApplication.jar" fork="true">
-            <jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"/>
+            <jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5007"/>
             <jvmarg value="--module-path"/>
             <jvmarg value="${javafx.dir}"/>
             <jvmarg value="--add-modules"/>

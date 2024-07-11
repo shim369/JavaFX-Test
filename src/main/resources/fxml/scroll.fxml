@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" fx:controller="main.java.app.controller.ScrollController" stylesheets="/css/style.css">
+    <top>
+        <HBox styleClass="header">
+            <children>
+                <Label text="JavaFX Test App" styleClass="header-label" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox styleClass="padding-20">
+            <HBox styleClass="btn-box">
+                <Button text="Back to Top View" onAction="#handleButtonTopAction" styleClass="btn" />
+            </HBox>
+            <Label fx:id="listLabel" styleClass="list-label" />
+               
+            <TabPane fx:id="TestTabPane">
+                <tabs>
+                    <Tab fx:id="ListTab1" text="タブ１" closable="false">
+                        <content>
+                            <VBox>
+                                <children>
+                                    <ScrollPane fx:id="ScrollPane1" fitToWidth="true" vbarPolicy="AS_NEEDED">
+                                        <content>
+                                            <VBox fx:id="TilePane1" fillWidth="true">
+                                                <ListView fx:id="listView1" prefHeight="300" styleClass="list-view" />
+                                            </VBox>
+                                        </content>
+                                    </ScrollPane>
+                                </children>
+                            </VBox>
+                        </content>
+                    </Tab>
+                    <Tab fx:id="ListTab2" text="タブ2" closable="false">
+                        <content>
+                            <VBox>
+                                <children>
+                                    <ScrollPane fx:id="ScrollPane2" fitToWidth="true" vbarPolicy="AS_NEEDED">
+                                        <content>
+                                            <VBox fx:id="TilePane2" fillWidth="true">
+                                                <ListView fx:id="listView2" prefHeight="300" styleClass="list-view" />
+                                            </VBox>
+                                        </content>
+                                    </ScrollPane>
+                                </children>
+                            </VBox>
+                        </content>
+                    </Tab>
+                </tabs>
+            </TabPane>
+            <HBox styleClass="l-r-btn-box">
+                <Button text="◀" onAction="#handlePreviousButtonClick" />
+                <Button text="▶" onAction="#handleNextButtonClick" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
