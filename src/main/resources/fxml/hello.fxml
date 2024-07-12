@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" fx:controller="main.java.app.controller.HelloController" stylesheets="/css/style.css">
-    <top>
+<top>
         <HBox styleClass="header">
             <children>
                 <Label text="JavaFX Test App" styleClass="header-label" />
@@ -13,10 +13,11 @@
     </top>
     <center>
         <VBox styleClass="padding-20">
-            <HBox styleClass="btn-box">
-                <Button text="Go to Scroll View" onAction="#handleButtonAction" styleClass="btn" />
-            </HBox>
             <Label fx:id="listLabel" styleClass="list-label" />
+            <HBox styleClass="l-r-btn-box">
+                <Button text="◀" onAction="#handlePreviousButtonClick" />
+                <Button text="▶" onAction="#handleNextButtonClick" />
+            </HBox>
                 
             <TabPane fx:id="TestTabPane">
                 <tabs>
@@ -52,9 +53,8 @@
                     </Tab>
                 </tabs>
             </TabPane>
-            <HBox styleClass="l-r-btn-box">
-                <Button text="◀" onAction="#handlePreviousButtonClick" />
-                <Button text="▶" onAction="#handleNextButtonClick" />
+            <HBox styleClass="btn-box">
+                <Button text="Go to Scroll View" onAction="#handleButtonAction" styleClass="btn" />
             </HBox>
         </VBox>
     </center>
